@@ -6,5 +6,7 @@
 	environment.systemPackages = with pkgs; [
     git
     wget
+    cryptsetup
+    nixos-option
   ];
 }
