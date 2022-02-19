@@ -12,7 +12,7 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-label/nixos";
+    { device = "/dev/disk/by-label/root";
       fsType = "ext4";
     };
 
@@ -20,6 +20,9 @@
     { device = "/dev/disk/by-label/BOOT";
       fsType = "vfat";
     };
+
+  # TODO... update by-uuid with the uuid of the luks encrypted disk
+  boot.initrd.luks.devices.nixenc.device = "/dev/disk/by-uuid/<disk-uuid>";
 
   swapDevices =
     [ { device = "/dev/disk/by-label/swap"; }

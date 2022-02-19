@@ -11,6 +11,7 @@
     useOSProber = true;
     efiInstallAsRemovable = true;
     configurationLimit = 5;
+    enableCryptodisk = true;
   };
   
   # virtual machine stuff
