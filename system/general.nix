@@ -9,22 +9,22 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "21.11"; # Did you read the comment?
 
-  # enable flakes
   nix = {
+    autoOptimiseStore = true;
+    # Automatic gc
+    gc = {
+      automatic = true;
+      dates = "08:30";
+    };
     package = pkgs.nixUnstable; # or versioned attributes like nix_2_4
+    # enable flakes
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
    };
 
   # Set your time zone.
-  time.timeZone = "Europe/Amsterdam";
-
-  # Automatic gc
-  nix.gc = {
-    automatic = true;
-    dates = "08:30";
-  };
+  time.timeZone = "Europe/Rome";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";

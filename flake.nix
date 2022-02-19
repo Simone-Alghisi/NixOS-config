@@ -17,6 +17,7 @@
         ./system/boot.nix
         ./system/general.nix
         ./system/video-driver.nix
+        ./system/services.nix
         ./system/network.nix
         ./system/users.nix
         ./system/gnome.nix

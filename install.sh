@@ -1,27 +1,21 @@
 #!/bin/sh
 set -e
 HOSTNAME="alghisius-nixos"
-BOOT_DEV=$1
+ROOT_DEV=$1
 SWAP_DEV=$2
-ROOT_DEV=$3
-
-# set root password
-passwd root
-
-# change user
-sudo -i
+BOOT_DEV=$3
 
 # encrypt root
-cryptsetup --type luks2 luksFormat "$BOOT_DEV"
-cryptsetup open "$BOOT_DEV" nixenc
-cryptsetup config "$BOOT_DEV" --label nixenc
+cryptsetup --type luks2 luksFormat "$ROOT_DEV"
+cryptsetup open "$ROOT_DEV" nixenc
+cryptsetup config "$ROOT_DEV" --label nixenc
 
 ROOT="/dev/mapper/nixenc"
 
 # format filesystem
 mkfs.ext4 -L root "$ROOT"
 mkswap -L swap "$SWAP_DEV"
-mkfs.fat -F 32 -n boot "$BOOT_DEV"
+mkfs.fat -F 32 -n BOOT "$BOOT_DEV"
 
 # mount
 mount "$ROOT" /mnt
