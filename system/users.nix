@@ -5,7 +5,7 @@
     isNormalUser = true;
     home = "/home/alghisius";
     description = "Simone Alghisi";
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user and networkmanager.
     shell = pkgs.zsh; # default shell only for this user.
   };
 }
