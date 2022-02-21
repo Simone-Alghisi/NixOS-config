@@ -11,14 +11,13 @@
     efiSupport = true;
     configurationLimit = 5;
     enableCryptodisk = true;
-		# replace "<WINDOWS-EFI-UUID>" with the one on your machine
     extraEntries = ''
       menuentry "Windows" {
         insmod part_gpt
         insmod fat
         insmod search_fs_uuid
         insmod chain
-        search --fs-uuid --set=root "<WINDOWS-EFI-UUID>"
+        search --fs-uuid --set=root 6EDB-2C87
         chainloader /EFI/Microsoft/Boot/bootmgfw.efi
       }
     '';

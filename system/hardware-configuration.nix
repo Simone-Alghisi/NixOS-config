@@ -20,8 +20,7 @@
       fsType = "ext4";
     };
 
-	# replace <your-encrypt-disk-uuid> with the one on your machine if nix didn't already get that
-  boot.initrd.luks.devices."nixenc".device = "/dev/disk/by-uuid/<your-encrypt-disk-uuid>";
+  boot.initrd.luks.devices."nixenc".device = "/dev/disk/by-uuid/df9bec92-7c2d-46b3-b665-b7c9aa9f71a5";
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-label/BOOT";
