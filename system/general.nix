@@ -23,8 +23,8 @@
     '';
    };
 
-  # Set your time zone.
-  time.timeZone = "Europe/Rome";
+  # Time for Windows-Nix dual boot.
+  time.hardwareClockInLocalTime = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -32,5 +32,8 @@
     font = "Lat2-Terminus16";
     keyMap = "it";
   };
+
+  # allow infree packages installation
+  nixpkgs.config.allowUnfree = true;
 }
 

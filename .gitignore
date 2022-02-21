@@ -1,1 +1,3 @@
 unused
+system/hardware-configuration.nix
+system/boot.nix
