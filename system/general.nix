@@ -24,6 +24,7 @@
    };
 
   # Time for Windows-Nix dual boot.
+  time.timeZone = "Europe/Rome";
   time.hardwareClockInLocalTime = true;
 
   # Select internationalisation properties.
@@ -32,8 +33,5 @@
     font = "Lat2-Terminus16";
     keyMap = "it";
   };
-
-  # allow infree packages installation
-  nixpkgs.config.allowUnfree = true;
 }
 

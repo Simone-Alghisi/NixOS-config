@@ -20,11 +20,17 @@
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."nixenc".device = "/dev/disk/by-uuid/df9bec92-7c2d-46b3-b665-b7c9aa9f71a5";
+  boot.initrd.luks.devices."nixenc".device = "/dev/disk/by-uuid/2b77668b-1fbc-4e48-85bc-ca17b7d8b41c";
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-label/BOOT";
       fsType = "vfat";
+    };
+
+  # mount Nix-Windows shared partition
+  fileSystems."/home/alghisius/shared" =
+    { device = "/dev/disk/by-label/shared";
+      fsType = "ntfs";
     };
 
   swapDevices = [ ];
