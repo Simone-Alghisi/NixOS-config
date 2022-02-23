@@ -24,6 +24,7 @@
         ./system/zsh.nix
         ./system/packages.nix
         ./system/X11.nix
+        ./system/borgbackup.nix
       ];
     };
   };

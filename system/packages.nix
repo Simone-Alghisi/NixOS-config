@@ -13,6 +13,7 @@
     thunderbird
     obsidian
     borgbackup
+    rclone
   ];
   
   # permitted insecure packages
