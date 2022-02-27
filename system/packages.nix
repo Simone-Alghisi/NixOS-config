@@ -7,27 +7,7 @@
     git
     wget
     cryptsetup
-    tdesktop
-    vscode
-    firefox
-    thunderbird
-    obsidian
     borgbackup
     rclone
-    zoom-us
-    discord
-  ];
-  
-  # permitted insecure packages
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-13.6.9"
-  ];
-
-  # permitted unfree packages
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "vscode"
-    "obsidian"
-    "zoom"
-    "discord"
   ];
 }
