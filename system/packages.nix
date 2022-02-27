@@ -14,6 +14,8 @@
     obsidian
     borgbackup
     rclone
+    zoom-us
+    discord
   ];
   
   # permitted insecure packages
@@ -25,5 +27,7 @@
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "vscode"
     "obsidian"
+    "zoom"
+    "discord"
   ];
 }
