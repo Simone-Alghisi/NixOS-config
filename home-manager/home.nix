@@ -3,6 +3,6 @@
 {
     imports = [
         ./modules/packages.nix
-        ./modules/services.nix
+        ./modules/git.nix
     ];
 }
