@@ -22,7 +22,7 @@
 				repo = path_to_repo;
 				exclude = map (x: "/home/alghisius" + "/" + x) (common_excludes);
 				compression = "auto,lzma";
-				# timer set for all days at 10:00, see https://www.freedesktop.org/software/systemd/man/systemd.time.html
+				# timer set for all days at 11:00, see https://www.freedesktop.org/software/systemd/man/systemd.time.html
 				startAt = "*-*-* 11:00:00";
 				prune.keep = {
 					daily = 4; # Keep all archive of last four days 

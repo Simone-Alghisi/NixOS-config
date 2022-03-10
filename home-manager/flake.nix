@@ -7,8 +7,8 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Specify the source of Home Manager
     home-manager = {
-        url = "github:rycee/home-manager/release-21.11";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:rycee/home-manager/release-21.11";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

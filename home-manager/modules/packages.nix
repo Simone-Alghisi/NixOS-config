@@ -4,10 +4,8 @@
   # List packages installed in your user profile. To search, run:
   # $ nix search wget
   home.packages = with pkgs; [
-    git
     wget
     tdesktop
-    vscode
     firefox
     thunderbird
     obsidian
@@ -16,6 +14,8 @@
     zoom-us
     discord
     home-manager
+    dragon-drop
+    libreoffice
   ];
   
   # permitted insecure packages
@@ -29,6 +29,7 @@
     "obsidian"
     "zoom"
     "discord"
+    "vscode-extension-MS-python-vscode-pylance"
   ];
 
   programs.direnv = {
