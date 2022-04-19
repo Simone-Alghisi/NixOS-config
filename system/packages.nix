@@ -10,4 +10,5 @@
     borgbackup
     rclone
   ];
+  environment.pathsToLink = [ "/share/zsh" ];
 }

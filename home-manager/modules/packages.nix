@@ -16,6 +16,13 @@
     home-manager
     dragon-drop
     libreoffice
+    ffmpeg
+    xournalpp
+    btop
+    nodePackages.npm
+    nodejs
+    google-chrome
+    fd
   ];
   
   # permitted insecure packages
@@ -30,6 +37,8 @@
     "zoom"
     "discord"
     "vscode-extension-MS-python-vscode-pylance"
+    "vscode-extension-ms-vsliveshare-vsliveshare"
+    "google-chrome"
   ];
 
   programs.direnv = {

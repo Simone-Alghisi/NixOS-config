@@ -11,6 +11,8 @@
 			ms-toolsai.jupyter
 			arrterian.nix-env-selector
 			dracula-theme.theme-dracula
+			ms-vsliveshare.vsliveshare
+			jnoortheen.nix-ide
 		];
 		
 		keybindings = [
