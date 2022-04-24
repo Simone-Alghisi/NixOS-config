@@ -14,7 +14,7 @@
     # Automatic gc
     gc = {
       automatic = true;
-      dates = "08:30";
+      dates = "09:30";
     };
     package = pkgs.nixUnstable; # or versioned attributes like nix_2_4
     # enable flakes

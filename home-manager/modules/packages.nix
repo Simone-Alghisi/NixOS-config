@@ -19,10 +19,10 @@
     ffmpeg
     xournalpp
     btop
-    nodePackages.npm
-    nodejs
+    nodejs-16_x
     google-chrome
     fd
+    black
   ];
   
   # permitted insecure packages

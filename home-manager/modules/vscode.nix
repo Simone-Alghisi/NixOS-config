@@ -13,6 +13,7 @@
 			dracula-theme.theme-dracula
 			ms-vsliveshare.vsliveshare
 			jnoortheen.nix-ide
+			vscodevim.vim
 		];
 		
 		keybindings = [
@@ -26,7 +27,7 @@
 		];
 		userSettings = {
 			"window.zoomLevel" = 1;
-			"terminal.integrated.fontFamily" = "\"Droid Sans Mono for Powerline\"";
+			"terminal.integrated.fontFamily" = "\"Meslo LG S for Powerline\"";
 			"workbench.colorTheme" = "Dracula";
 			"python.languageServer" = "Pylance";
 			"editor.tabSize" = 2;

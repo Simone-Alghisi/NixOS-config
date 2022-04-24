@@ -7,5 +7,6 @@
 		./modules/vscode.nix
 		./modules/java.nix
 		./modules/zsh.nix
+		./modules/vim.nix
 	];
 }
