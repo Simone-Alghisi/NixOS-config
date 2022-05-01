@@ -35,7 +35,7 @@ Basically one day Windows commited suiced and, after several tries, my option wa
 
 1. use `lsblk -f` and `fdisk` print (`p` after selecting the device) to understand which are the partitions to be mounted (should be quite straightforward for the EFI and LUKS);
 2. make sure that such partitions are the one specified [here](./system/hardware-configuration.nix);
-3. run `install.sh <ROOT_DEV> <BOOT_DEV>`.
+3. run `repair_install.sh <ROOT_DEV> <BOOT_DEV>`.
 
 ## Dualboot
 In most cases, dualboot is quite easy given that it is possible to use OSProber and look for other OS to add to GRUB. However, sometimes things are not so easy: in particular, ["my" workaround](https://nixos.wiki/wiki/Dual_Booting_NixOS_and_Windows) is to [add a manual entry to GRUB by specifying Windows EFI UUID](./system/boot.nix). 
