@@ -27,10 +27,22 @@
       fsType = "vfat";
     };
 
+  # https://nixos.wiki/wiki/NTFS
+  boot.supportedFilesystems = [ "ntfs" ];
   # mount Nix-Windows shared partition
   fileSystems."/home/alghisius/shared" =
     { device = "/dev/disk/by-label/shared";
       fsType = "ntfs";
+      # https://help.ubuntu.com/community/Fstab
+      options = [
+        "nofail"
+        # workaround for git needing ownership of file
+        "uid=${toString config.users.users.alghisius.uid}"
+        # https://unix.stackexchange.com/questions/396904/fstab-mount-options-for-umask-fmask-dmask-for-ntfs-with-noexec
+        "dmask=0022"
+        "fmask=0133"
+        "rw"
+      ];
     };
 
   swapDevices = [ ];

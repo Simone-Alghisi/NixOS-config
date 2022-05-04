@@ -12,14 +12,25 @@
     };
   };
 
-  outputs = { self, home-manager, ... }:
+  outputs = { self, home-manager, nixpkgs-unstable, ... }:
     let
       system = "x86_64-linux";
       username = "alghisius";
+      unstable-overlay = final: prev: {
+        unstable = nixpkgs-unstable.legacyPackages.${system};
+      };
+      overlays = [
+        unstable-overlay
+      ];
     in {
       homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
         # Specify the path to your home configuration here
-        configuration = import ./home.nix;
+        configuration = { pkgs, ... }: {
+          nixpkgs.overlays = overlays;
+          imports = [
+            ./home.nix
+          ];
+        };
 
         inherit system username;
         homeDirectory = "/home/${username}";

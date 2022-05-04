@@ -5,7 +5,7 @@
   # $ nix search wget
   home.packages = with pkgs; [
     wget
-    tdesktop
+    unstable.tdesktop
     firefox
     thunderbird
     obsidian
