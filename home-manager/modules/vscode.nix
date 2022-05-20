@@ -30,7 +30,7 @@
 			"terminal.integrated.fontFamily" = "\"Meslo LG S for Powerline\"";
 			"workbench.colorTheme" = "Dracula";
 			"python.languageServer" = "Pylance";
-			"editor.tabSize" = 2;
+			"editor.tabSize" = 4;
 		};
 	};
 }

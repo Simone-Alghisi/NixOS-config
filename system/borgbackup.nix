@@ -7,6 +7,7 @@
 			# list of
 			common_excludes = [
 				".cache"
+				".local"
 				"*/cache"
 				"*/cache2"
 				"*/GPUCache"

@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     wget
     unstable.tdesktop
+    whatsapp-for-linux
     firefox
     thunderbird
     obsidian
@@ -23,6 +24,9 @@
     google-chrome
     fd
     black
+    tree
+    psmisc
+    gimp
   ];
   
   # permitted insecure packages
