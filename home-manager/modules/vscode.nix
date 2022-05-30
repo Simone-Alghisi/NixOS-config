@@ -14,6 +14,8 @@
 			ms-vsliveshare.vsliveshare
 			jnoortheen.nix-ide
 			vscodevim.vim
+			streetsidesoftware.code-spell-checker
+			yzhang.markdown-all-in-one
 		];
 		
 		keybindings = [

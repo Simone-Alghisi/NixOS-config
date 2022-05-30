@@ -27,6 +27,8 @@
     tree
     psmisc
     gimp
+    shotcut
+    ncdu
   ];
   
   # permitted insecure packages
