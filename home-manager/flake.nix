@@ -3,11 +3,11 @@
 
   inputs = {
     # Specify the source of Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-21.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Specify the source of Home Manager
     home-manager = {
-      url = "github:rycee/home-manager/release-21.11";
+      url = "github:rycee/home-manager/release-22.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -42,6 +42,7 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
-      defaultPackage.${system} = self.homeConfigurations.${username}.activationPackage;
+      # https://nixos.org/manual/nix/stable/release-notes/rl-2.7.html
+      packages.${system}.default = self.homeConfigurations.${username}.activationPackage;
     };
 }

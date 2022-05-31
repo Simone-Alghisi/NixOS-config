@@ -15,7 +15,7 @@
     zoom-us
     discord
     home-manager
-    dragon-drop
+    xdragon
     libreoffice
     ffmpeg
     xournalpp
@@ -50,6 +50,5 @@
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
-    nix-direnv.enableFlakes = true;
   };
 }
