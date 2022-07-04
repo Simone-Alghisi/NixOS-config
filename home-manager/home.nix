@@ -10,5 +10,6 @@
 		./modules/zsh.nix
 		./modules/vim.nix
 		./modules/autostart.nix
+		./modules/systemd.nix
 	];
 }

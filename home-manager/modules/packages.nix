@@ -29,6 +29,7 @@
     gimp
     shotcut
     ncdu
+    lollypop
   ];
   
   # permitted insecure packages

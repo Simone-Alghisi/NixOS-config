@@ -24,7 +24,7 @@
     oh-my-zsh = {
       enable = true;
       # complete list at https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
-      plugins = [ "git" "python" "man" "fzf"];
+      plugins = [ "git" "python" "man" "fzf" "command-not-found"];
       # complete list at https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
       theme = "agnoster";
     };

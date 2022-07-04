@@ -20,6 +20,8 @@
 				"*/backups"
 				"*/System\ Volume\ Information"
 				"*/node_modules"
+				"Pictures/Screenshots"
+				"Downloads"
 			];
 			BorgJob = {path_to_repo, cmd}: rec {
 				user = "root";
@@ -47,9 +49,7 @@
 					paths = "/home/alghisius";
 					extraCreateArgs = "--stats --checkpoint-interval 600 --list";
 					postCreate = ''
-						echo "started rclone at" ''$(date)
-						/run/current-system/sw/bin/rclone --config='/home/alghisius/.config/rclone/rclone.conf' sync /home/alghisius/shared/backups remote:backups --progress
-						echo "finished rclone at" ''$(date)
+						${pkgs.rclone}/bin/rclone --config='/home/alghisius/.config/rclone/rclone.conf' sync /home/alghisius/shared/backups remote:backups --progress
 					'';
 				};
 			};
