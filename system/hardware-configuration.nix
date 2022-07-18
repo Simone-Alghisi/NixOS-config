@@ -12,8 +12,6 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  # fix kernel flickering screen on XPS 13 9310 2-in-1
-  boot.kernelParams = [ "i915.enable_psr=0" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-label/root";
