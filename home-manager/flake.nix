@@ -17,7 +17,10 @@
       system = "x86_64-linux";
       username = "alghisius";
       unstable-overlay = final: prev: {
-        unstable = nixpkgs-unstable.legacyPackages.${system};
+        unstable = import nixpkgs-unstable {
+          system = system;
+          config.allowUnfree = true;
+        };
       };
       overlays = [
         unstable-overlay

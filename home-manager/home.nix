@@ -11,5 +11,6 @@
 		./modules/vim.nix
 		./modules/autostart.nix
 		./modules/systemd.nix
+		./modules/zotero.nix
 	];
 }

@@ -72,6 +72,5 @@
         "python.formatting.provider" = "black";
       };
     };
-
 	};
 }

@@ -9,7 +9,7 @@
     whatsapp-for-linux
     firefox
     thunderbird
-    obsidian
+    unstable.obsidian
     borgbackup
     rclone
     zoom-us
@@ -30,13 +30,10 @@
     shotcut
     ncdu
     lollypop
+    unstable.zotero
+    ripgrep
   ];
   
-  # permitted insecure packages
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-13.6.9"
-  ];
-
   # permitted unfree packages
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "vscode"
