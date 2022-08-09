@@ -12,7 +12,6 @@
 
     mach-nix= {
       url = "mach-nix/3.5.0";
-      inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
       inputs.pypi-deps-db.follows = "pypi-deps-db";
     };

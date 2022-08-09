@@ -3,6 +3,7 @@
 {
   nix.registry = {
     my-templates = {
+      exact = false;
       from = {
         id = "my-templates";
         type = "indirect";
@@ -12,6 +13,7 @@
         owner = "Simone-Alghisi";
         repo = "NixOS-config";
         type = "github";
+        ref = "master";
       };
     };
   };
