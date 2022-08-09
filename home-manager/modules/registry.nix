@@ -3,7 +3,6 @@
 {
   nix.registry = {
     my-templates = {
-      exact = false;
       from = {
         id = "my-templates";
         type = "indirect";
