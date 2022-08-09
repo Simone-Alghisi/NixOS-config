@@ -37,7 +37,6 @@
   # permitted unfree packages
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "vscode"
-    "obsidian"
     "zoom"
     "discord"
     "vscode-extension-MS-python-vscode-pylance"

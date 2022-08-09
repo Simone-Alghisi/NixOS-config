@@ -12,10 +12,8 @@
       pythonify() {
         echo "use flake" > .envrc
         direnv allow
-        echo "# requirements for mach-nix" > requirements.txt
-        nano requirements.txt
-        cat ~/.config/direnv/models/python_env > flake.nix
-        nano flake.nix
+        nix flake init -t my-templates#python
+        ${pkgs.neovim}/bin/nvim .
       }
     '';
     localVariables = {

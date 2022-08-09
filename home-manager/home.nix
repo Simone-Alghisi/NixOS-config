@@ -2,15 +2,16 @@
 
 {
 	imports = [
-		./modules/home.nix
-		./modules/packages.nix
-		./modules/git.nix
-		./modules/vscode.nix
-		./modules/java.nix
-		./modules/zsh.nix
-		./modules/vim.nix
 		./modules/autostart.nix
+		./modules/git.nix
+		./modules/home.nix
+		./modules/java.nix
+		./modules/packages.nix
+		./modules/registry.nix
 		./modules/systemd.nix
+		./modules/vim.nix
+		./modules/vscode.nix
 		./modules/zotero.nix
+		./modules/zsh.nix
 	];
 }

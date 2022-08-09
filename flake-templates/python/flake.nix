@@ -33,7 +33,7 @@
         cleanedReq = builtins.concatStringsSep "\n" (builtins.concatMap removeVersion req);
 
         python-build = mach.mkPython {
-          python = "python39"
+          python = "python39";
           requirements = builtins.readFile ./requirements.txt;
           packagesExtra = [
 
@@ -48,5 +48,5 @@
           python-build
         ];
       };
-    };
+    });
 }
