@@ -6,27 +6,25 @@
 		let 
 			# list of
 			common_excludes = [
-				".cache"
-				".local"
-				".npm"
-				"*/ImapMail"
-				"*/cache"
-				"*/cache2"
-				"*/GPUCache"
-				"*/Cache"
-				"*/Code Cache"
-				"*/Code/Service\ Worker/"
-				"*/\$RECYCLE.BIN"
-				"*/backups"
-				"*/System\ Volume\ Information"
-				"*/node_modules"
-				"Pictures/Screenshots"
-				"Downloads"
+				"\$RECYCLE.BIN"
+				".Trash-1000"
+				"System\ Volume\ Information"
+				"Recovery"
+				"Recovery.txt"
+				"backups"
+				"Screenshots"
+				".git"
+				".direnv"
+				"**/*cache*"
+				"**/*Cache*"
+				"**/Service\ Worker/"
+				"**/node_modules"
+				"**/.git"
+				"**/.direnv"
 			];
-			BorgJob = {path_to_repo, cmd}: rec {
+			BorgJob = {path_to_repo, cmd}: {
 				user = "root";
 				repo = path_to_repo;
-				exclude = map (x: "/home/alghisius" + "/" + x) (common_excludes);
 				compression = "auto,lzma";
 				# timer set for all days at 11:00, see https://www.freedesktop.org/software/systemd/man/systemd.time.html
 				startAt = "*-*-* 11:00:00";
@@ -45,8 +43,24 @@
 				drive = BorgJob {
 					path_to_repo = "/home/alghisius/shared/backups"; 
 					cmd = "cat /home/alghisius/.config/borg/alghisius/passphrase1";
-				} // {
-					paths = "/home/alghisius";
+				} // rec {
+					paths = [
+						"/home/alghisius/Documents"
+						"/home/alghisius/Music"
+						"/home/alghisius/NixOS-config"
+						"/home/alghisius/Pictures"
+						"/home/alghisius/shared"
+						"/home/alghisius/.config"
+						"/home/alghisius/.ssh"
+
+					];
+					exclude = builtins.concatLists (
+						map (x: 
+							map (y: 
+								x + "/" + y
+							) (common_excludes)
+						) (paths)
+					);
 					extraCreateArgs = "--stats --checkpoint-interval 600 --list";
 					postCreate = ''
 						${pkgs.rclone}/bin/rclone --config='/home/alghisius/.config/rclone/rclone.conf' sync /home/alghisius/shared/backups remote:backups --progress
