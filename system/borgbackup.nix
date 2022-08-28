@@ -38,21 +38,21 @@
 					passCommand = cmd;
 				};
 			};
+			home = config.users.users.alghisius.home;
 		in
 			{
 				drive = BorgJob {
-					path_to_repo = "/home/alghisius/shared/backups"; 
-					cmd = "cat /home/alghisius/.config/borg/alghisius/passphrase1";
+					path_to_repo = "${home}/shared/backups"; 
+					cmd = "cat ${home}/.config/borg/alghisius/passphrase1";
 				} // rec {
 					paths = [
-						"/home/alghisius/Documents"
-						"/home/alghisius/Music"
-						"/home/alghisius/NixOS-config"
-						"/home/alghisius/Pictures"
-						"/home/alghisius/shared"
-						"/home/alghisius/.config"
-						"/home/alghisius/.ssh"
-
+						"${home}/Documents"
+						"${home}/Music"
+						"${home}/NixOS-config"
+						"${home}/Pictures"
+						"${home}/shared"
+						"${home}/.config"
+						"${home}/.ssh"
 					];
 					exclude = builtins.concatLists (
 						map (x: 
@@ -62,8 +62,12 @@
 						) (paths)
 					);
 					extraCreateArgs = "--stats --checkpoint-interval 600 --list";
-					postCreate = ''
-						${pkgs.rclone}/bin/rclone --config='/home/alghisius/.config/rclone/rclone.conf' sync /home/alghisius/shared/backups remote:backups --progress
+					extraPruneArgs = "--stats --list";
+					postPrune = ''
+						echo "compacting archives"
+						${pkgs.borgbackup}/bin/borg --progress compact --cleanup-commits ${home}/shared/backups
+						echo "running rclone"
+						${pkgs.rclone}/bin/rclone --config='${home}/.config/rclone/rclone.conf' sync ${home}/shared/backups remote:backups --progress
 					'';
 				};
 			};
