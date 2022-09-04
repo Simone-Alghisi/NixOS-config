@@ -10,6 +10,11 @@
         description = "A simple python template using mach-nix";
       };
 
+      ruby = {
+        path = ./ruby;
+        description = "A simple ruby template";
+      };
+
     };
 
     defaultTemplate = self.templates.python;

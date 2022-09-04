@@ -33,6 +33,7 @@
 					weekly = 2; # Keep all archive of last two weeks
 					monthly = 1; # Keep all archive of last month
 				};
+				persistentTimer = true;
 				encryption = {
 					mode = "repokey";
 					passCommand = cmd;
