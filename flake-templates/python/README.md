@@ -18,7 +18,9 @@ A simple python template using [mach-nix](https://github.com/DavHau/mach-nix).
 - [Troubleshooting](#troubleshooting)
   - [Cache Issues](#cache-issues)
   - [Qt5 on a Gnome environment](#qt5-on-a-gnome-environment)
+  - [Pip cannot find a certain package version](#pip-cannot-find-a-certain-package-version)
   - [System dependent package/library](#system-dependent-packagelibrary)
+  - [Others](#others)
 
 ## Change Mach-Nix version
 To update or change mach-nix version to a previous release, simply change its tag in the `url` field of `mach-nix` in the flake inputs.
@@ -203,5 +205,22 @@ Moreover, it is necessary to edit the `.envrc` to add
 export QT_QPA_PLATFORM=wayland-egl
 ```
 
+### Pip cannot find a certain package version
+The fastest workaround is to clone the repository to your local folder, change the requirements file accordingly to pypi-debs-db. My suggestion is to change a requirements as it follows:
+
+```python
+bs4==0.0.1
+requests==2.*
+texttable==1.*
+tqdm==4.*
+```
+
 ### System dependent package/library
 Hope that it is not a dependency of a python package and that it is available as a Nix package.
+
+### Others
+I wish you the best of luck, and suggests the following:
+
+- [mach-nix example file](https://github.com/DavHau/mach-nix/blob/master/examples.md);
+- [take a deep breath](https://www.google.com/search?client=firefox-b-d&q=cats);
+- the *[works-(almost)-every-time](https://www.google.com)* method.

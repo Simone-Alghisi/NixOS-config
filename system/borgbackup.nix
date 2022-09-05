@@ -3,7 +3,7 @@
 {
 	services.borgbackup.jobs =
 		# define general configurations
-		let 
+		let
 			# list of
 			common_excludes = [
 				"\$RECYCLE.BIN"
@@ -26,10 +26,10 @@
 				user = "root";
 				repo = path_to_repo;
 				compression = "auto,lzma";
-				# timer set for all days at 11:00, see https://www.freedesktop.org/software/systemd/man/systemd.time.html
-				startAt = "*-*-* 11:00:00";
+				# timer set for all days, see https://www.freedesktop.org/software/systemd/man/systemd.time.html
+				startAt = "daily";
 				prune.keep = {
-					daily = 4; # Keep all archive of last four days 
+					daily = 4; # Keep all archive of last four days
 					weekly = 2; # Keep all archive of last two weeks
 					monthly = 1; # Keep all archive of last month
 				};
@@ -43,7 +43,7 @@
 		in
 			{
 				drive = BorgJob {
-					path_to_repo = "${home}/shared/backups"; 
+					path_to_repo = "${home}/shared/backups";
 					cmd = "cat ${home}/.config/borg/alghisius/passphrase1";
 				} // rec {
 					paths = [
@@ -56,8 +56,8 @@
 						"${home}/.ssh"
 					];
 					exclude = builtins.concatLists (
-						map (x: 
-							map (y: 
+						map (x:
+							map (y:
 								x + "/" + y
 							) (common_excludes)
 						) (paths)

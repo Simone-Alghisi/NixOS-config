@@ -10,7 +10,7 @@
   system.stateVersion = "21.11"; # Did you read the comment?
 
   nix = {
-    autoOptimiseStore = true;
+    settings.auto-optimise-store = true;
     # Automatic gc
     gc = {
       automatic = true;
