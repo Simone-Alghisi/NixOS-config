@@ -1,8 +1,8 @@
 { config, pkgs, ...}:
 
 {
-	programs.neovim = {
-		enable = true;
+  programs.neovim = {
+    enable = true;
     viAlias = true;
 
     # extra config for vim.init (new vim.rc)
@@ -64,7 +64,7 @@
           "h"
         ];
         # python config
-        "pyright.enable" = true; 
+        "pyright.enable" = true;
         "python.linting.pylintEnabled" = true;
         "python.linting.enabled" = true;
         "python.jediEnabled" = true;
@@ -72,5 +72,5 @@
         "python.formatting.provider" = "black";
       };
     };
-	};
+  };
 }

@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-	# boot loader
+  # boot loader
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot";
   boot.loader.grub = {

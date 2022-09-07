@@ -1,7 +1,7 @@
 { config, pkgs, ...}:
 
 {
-	services = {
+  services = {
     power-profiles-daemon.enable = false;
     tlp = {
       enable = true;

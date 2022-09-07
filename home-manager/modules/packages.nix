@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ...}: 
+{ config, pkgs, lib, ...}:
 
 {
   # List packages installed in your user profile. To search, run:
@@ -32,8 +32,9 @@
     lollypop
     unstable.zotero
     ripgrep
+    thefuck
   ];
-  
+
   # permitted unfree packages
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "vscode"

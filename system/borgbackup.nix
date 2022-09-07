@@ -68,7 +68,8 @@
 						echo "compacting archives"
 						${pkgs.borgbackup}/bin/borg --progress compact --cleanup-commits ${home}/shared/backups
 						echo "running rclone"
-						${pkgs.rclone}/bin/rclone --config='${home}/.config/rclone/rclone.conf' sync ${home}/shared/backups remote:backups --progress
+						${pkgs.rclone}/bin/rclone --config='${home}/.config/rclone/rclone.conf' sync ${home}/shared/backups unitn:backups --progress
+						${pkgs.rclone}/bin/rclone --config='${home}/.config/rclone/rclone.conf' sync ${home}/shared/backups personal:backups --progress
 					'';
 				};
 			};

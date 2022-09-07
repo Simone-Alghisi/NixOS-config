@@ -17,7 +17,7 @@
 			streetsidesoftware.code-spell-checker
 			yzhang.markdown-all-in-one
 		];
-		
+
 		keybindings = [
 			# keybind example
 			# {

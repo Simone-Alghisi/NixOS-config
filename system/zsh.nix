@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-	# zsh
+  # zsh
   programs.zsh = {
     enable = true;
   };
