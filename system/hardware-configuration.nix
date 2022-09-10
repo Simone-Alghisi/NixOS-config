@@ -18,7 +18,7 @@
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."nixenc".device = "/dev/disk/by-uuid/2b77668b-1fbc-4e48-85bc-ca17b7d8b41c";
+  boot.initrd.luks.devices."nixenc".device = "/dev/disk/by-label/nixenc";
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-label/BOOT";

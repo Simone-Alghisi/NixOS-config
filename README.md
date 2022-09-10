@@ -7,6 +7,7 @@ repo containing my nixos config
 - [Generating Live USB](#generating-live-usb)
 - [Pre-installation/repair](#pre-installationrepair)
   - [Installation](#installation)
+    - [Additional notes about hardware-configuration.nix](#additional-notes-about-hardware-configurationnix)
   - [Repair installation](#repair-installation)
 - [Dualboot](#dualboot)
 
@@ -41,6 +42,9 @@ Generally speaking it is better to first install windows and then perform all th
 3. as the last step, nixos-install will ask you to set the password for the root user;
 4. finally, set the password for your user, e.g. `sudo passwd alghisius`.
 
+#### Additional notes about hardware-configuration.nix
+Currently, I prefer to replace the hardware configuration file of the repo with the one generated automatically bux nix during the installation. However, the previous issue of LUKS not being able to find its disk by-label seems to be solved by running again `sudo cryptsetup config "$ROOT_DEV" --label nixenc`, and then changing the [`boot.initrd.luks`](./system/hardware-configuration.nix#L21) in the file. Anyway, given that I didn't run the installation in a while, it may be the case that things already worked-out, but I simply messed something up.
+
 ### Repair installation
 Basically one day Windows commited suicide and, after several tries, my option was to use the ISO setup to repair the corrupted OS. Of course, Windows resurrected but Nix Boot disappeared instead (YAY!). Long story short, you can recover Nix quite easily with a live usb by simply mounting the correct partition and installing.
 
@@ -49,4 +53,4 @@ Basically one day Windows commited suicide and, after several tries, my option w
 3. run `repair_install.sh <ROOT_DEV> <BOOT_DEV>`.
 
 ## Dualboot
-In most cases, dualboot is quite easy given that it is possible to use OSProber and look for other OS to add to GRUB. However, sometimes things are not so easy: in particular, ["my" workaround](https://nixos.wiki/wiki/Dual_Booting_NixOS_and_Windows) is to [add a manual entry to GRUB by specifying Windows EFI UUID](./system/boot.nix).
+In most cases, dualboot is quite easy given that it is possible to use OSProber and look for other OS to add to GRUB. However, sometimes things are not so easy: in particular, ["my" workaround](https://nixos.wiki/wiki/Dual_Booting_NixOS_and_Windows) is to [add a manual entry to GRUB by specifying Windows EFI UUID](./system/boot.nix#L14).
