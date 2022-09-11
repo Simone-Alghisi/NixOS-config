@@ -23,7 +23,6 @@
     nodejs-16_x
     google-chrome
     fd
-    black
     tree
     psmisc
     gimp
@@ -32,7 +31,7 @@
     lollypop
     unstable.zotero
     ripgrep
-    thefuck
+    wl-clipboard
   ];
 
   # permitted unfree packages

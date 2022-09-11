@@ -9,7 +9,7 @@
 		./modules/packages.nix
 		./modules/registry.nix
 		./modules/systemd.nix
-		./modules/vim.nix
+		./modules/nvim.nix
 		./modules/vscode.nix
 		./modules/zotero.nix
 		./modules/zsh.nix

@@ -24,7 +24,10 @@
 
         python-build = mach.mkPython {
           python = "python39";
-          requirements = builtins.readFile ./requirements.txt;
+          requirements = builtins.concatStringsSep "\n" [
+            (builtins.readFile ./requirements.txt)
+            (builtins.readFile ./requirements.dev.txt)
+          ];
           packagesExtra = [
 
           ];
@@ -35,7 +38,7 @@
         shellHook = ''
         '';
         name = "";
-        buildInputs = [
+        buildInputs = with pkgs; [
           python-build
         ];
       };
