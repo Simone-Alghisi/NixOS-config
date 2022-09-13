@@ -40,6 +40,8 @@
       vim-which-key
       # Nerd commenter
       nerdcommenter
+      # undotree
+      undotree
     ];
 
     coc.enable = true;

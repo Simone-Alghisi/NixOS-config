@@ -26,8 +26,7 @@ nnoremap <c-n> :call OpenTerminal()<CR>
 tnoremap <Esc> <C-\><C-n>
 
 "Fuzzy finder
-nnoremap <C-p> :FZF<CR>
-nnoremap <C-P> :Rg<CR>
+nnoremap <C-p> :Rg<CR>
 
 "Toggle with CTRL-B
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>

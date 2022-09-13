@@ -8,19 +8,18 @@
 			common_excludes = [
 				"\$RECYCLE.BIN"
 				".Trash-1000"
+				"backups"
 				"System\ Volume\ Information"
 				"Recovery"
 				"Recovery.txt"
-				"backups"
 				"Screenshots"
-				".git"
 				".direnv"
+				"**/.direnv"
 				"**/*cache*"
 				"**/*Cache*"
-				"**/Service\ Worker/"
 				"**/node_modules"
-				"**/.git"
-				"**/.direnv"
+				"**/Service\ Worker/"
+				"**/Trash"
 			];
 			BorgJob = {path_to_repo, cmd}: {
 				user = "root";
@@ -47,13 +46,18 @@
 					cmd = "cat ${home}/.config/borg/alghisius/passphrase1";
 				} // rec {
 					paths = [
+						"${home}/.config"
+						"${home}/.jupyter"
+						"${home}/.local"
+						"${home}/.mozilla"
+						"${home}/.ssh"
+						"${home}/.thunderbird"
+						"${home}/.zotero"
 						"${home}/Documents"
 						"${home}/Music"
 						"${home}/NixOS-config"
 						"${home}/Pictures"
 						"${home}/shared"
-						"${home}/.config"
-						"${home}/.ssh"
 					];
 					exclude = builtins.concatLists (
 						map (x:

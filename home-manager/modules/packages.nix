@@ -32,6 +32,7 @@
     unstable.zotero
     ripgrep
     wl-clipboard
+    gnome.dconf-editor
   ];
 
   # permitted unfree packages
