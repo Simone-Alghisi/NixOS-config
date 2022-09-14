@@ -20,16 +20,22 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " To return to the normal vim screen just press Ctrl+w+w
-nnoremap <c-n> :call OpenTerminal()<CR>
+nnoremap <C-n> :call OpenTerminal()<CR>
 
 " Turn the terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 
 "Fuzzy finder
-nnoremap <C-p> :Rg<CR>
+nnoremap <M-r> :Rg<CR>
 
 "Toggle with CTRL-B
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
 " Clear highlighting on escape in normal mode
-nnoremap <esc> :noh<return><esc>
+nnoremap <Esc> :noh<return><Esc>
+
+" Copy and Paste to wl-clipboard
+nnoremap <C-y> "+y
+vnoremap <C-y> "+y
+nnoremap <C-p> "+p
+vnoremap <C-p> "+p

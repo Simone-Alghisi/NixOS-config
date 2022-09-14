@@ -20,11 +20,14 @@
     '';
 
     plugins = with pkgs.vimPlugins; [
-      gruvbox
-      nerdtree
       fzf-vim
+      gruvbox
+      nerdcommenter
+      nerdtree
+      undotree
       vim-airline
       vim-airline-themes
+      vim-which-key
       # Better syntax-highlighting for filetypes in vim
       vim-polyglot
       # Git integration
@@ -33,15 +36,12 @@
       auto-pairs
       # Stable version of coc
       coc-nvim
+      # Python
       coc-pyright
       # C and C++ syntax highlight
       vim-lsp-cxx-highlight
-      # Which key
-      vim-which-key
-      # Nerd commenter
-      nerdcommenter
-      # undotree
-      undotree
+      # Markdown
+      vim-markdown-toc
     ];
 
     coc.enable = true;
