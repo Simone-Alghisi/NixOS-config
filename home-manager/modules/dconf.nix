@@ -1,6 +1,9 @@
 { config, pkgs, ...}:
 
 {
+	# To check the current gnome configuration you can run
+	# `dconf dump / > dconf.settings` and look at the generated
+	# file
 	dconf = {
 		enable = true;
 		settings = {
@@ -29,4 +32,8 @@
 	home.file.".bg.jpg" = {
 		source = ../assets/images/bg.jpg;
 	};
+
+	# If you want to test the value for a certain setting,
+	# you can also rely on dconf-editor
+	home.packages = [pkgs.gnome.dconf-editor];
 }

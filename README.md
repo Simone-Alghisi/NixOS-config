@@ -10,6 +10,7 @@ repo containing my nixos config
     - [Additional notes about hardware-configuration.nix](#additional-notes-about-hardware-configurationnix)
   - [Repair installation](#repair-installation)
 - [Dualboot](#dualboot)
+- [Upgrading](#upgrading)
 
 ## Generating Live USB
 Generally speaking it is better to first install windows and then perform all the various nix-related things. For such reasons, and due to the fact that on my machine it seems to be done in this way, it is recommended to use [Rufus](https://rufus.ie/en/) (from Windows) for performing the Live USB containing [nixos-minimal](https://nixos.org/download.html) ISO.
@@ -54,3 +55,11 @@ Basically one day Windows commited suicide and, after several tries, my option w
 
 ## Dualboot
 In most cases, dualboot is quite easy given that it is possible to use OSProber and look for other OS to add to GRUB. However, sometimes things are not so easy: in particular, ["my" workaround](https://nixos.wiki/wiki/Dual_Booting_NixOS_and_Windows) is to [add a manual entry to GRUB by specifying Windows EFI UUID](./system/boot.nix#L14).
+
+## Upgrading
+Upgrading NixOS is fairly simple, you can read the [corresponding section](https://nixos.org/manual/nixos/stable/index.html#sec-upgrading) for other informations, or do the following:
+1. switch to the right channel through `nix-channel --add https://nixos.org/channels/channel-name nixos`. Of course, change `channel name` to the right channel (e.g. `nixos-22.05`);
+    > Be sure to include `nixos` parameter at the end.
+2. run `nixos-rebuild switch --upgrade`;
+
+and you are done. At this point, you can update `nixpkgs.url` in the flakes to the new release. 

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ...}:
+{ config, pkgs, lib, ... }:
 
 {
   # List packages installed in your user profile. To search, run:
@@ -29,10 +29,6 @@
     shotcut
     ncdu
     lollypop
-    unstable.zotero
-    ripgrep
-    wl-clipboard
-    gnome.dconf-editor
   ];
 
   # permitted unfree packages

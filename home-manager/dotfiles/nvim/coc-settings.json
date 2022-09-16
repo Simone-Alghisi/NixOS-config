@@ -11,7 +11,8 @@
     "c",
     "cpp",
     "h",
-    "ruby"
+    "ruby",
+    "nix"
   ],
 
   // python config

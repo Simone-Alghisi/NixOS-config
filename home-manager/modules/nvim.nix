@@ -52,4 +52,9 @@
       recursive = true;
   };
 
+  home.packages = with pkgs; [
+    ripgrep
+    wl-clipboard
+  ];
+
 }

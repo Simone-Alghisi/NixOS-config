@@ -7,4 +7,5 @@
             sha256 = "194iyfx4bqh57kvyajzxglmicn29jm5wq0blwzrgmgqf14s0rqnd";
           });
     };
+    home.packages = [pkgs.unstable.zotero];
 }

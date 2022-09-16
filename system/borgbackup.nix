@@ -21,9 +21,9 @@
 				"**/Service\ Worker/"
 				"**/Trash"
 			];
-			BorgJob = {path_to_repo, cmd}: {
+			BorgJob = {pathToRepo, cmd}: {
 				user = "root";
-				repo = path_to_repo;
+				repo = pathToRepo;
 				compression = "auto,lzma";
 				# timer set for all days, see https://www.freedesktop.org/software/systemd/man/systemd.time.html
 				startAt = "daily";
@@ -42,7 +42,7 @@
 		in
 			{
 				drive = BorgJob {
-					path_to_repo = "${home}/shared/backups";
+					pathToRepo = "${home}/shared/backups";
 					cmd = "cat ${home}/.config/borg/alghisius/passphrase1";
 				} // rec {
 					paths = [
@@ -66,12 +66,16 @@
 							) (common_excludes)
 						) (paths)
 					);
+					preHook = ''
+						# Workaround to borg returning exit code 2 for warnings
+						${pkgs.coreutils}/bin/sleep 60
+					'';
 					extraCreateArgs = "--stats --checkpoint-interval 600 --list";
 					extraPruneArgs = "--stats --list";
 					postPrune = ''
-						echo "compacting archives"
+						${pkgs.coreutils}/bin/echo "compacting archives"
 						${pkgs.borgbackup}/bin/borg --progress compact --cleanup-commits ${home}/shared/backups
-						echo "running rclone"
+						${pkgs.coreutils}/bin/echo "running rclone"
 						${pkgs.rclone}/bin/rclone --config='${home}/.config/rclone/rclone.conf' sync ${home}/shared/backups unitn:backups --progress
 						${pkgs.rclone}/bin/rclone --config='${home}/.config/rclone/rclone.conf' sync ${home}/shared/backups personal:backups --progress
 					'';
