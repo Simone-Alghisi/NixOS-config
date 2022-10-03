@@ -7,7 +7,7 @@
     wget
     unstable.tdesktop
     whatsapp-for-linux
-    firefox
+    firefox-esr-wayland
     thunderbird
     unstable.obsidian
     borgbackup
@@ -29,6 +29,8 @@
     shotcut
     ncdu
     lollypop
+    slack
+    globalprotect-openconnect
   ];
 
   # permitted unfree packages
@@ -39,6 +41,7 @@
     "vscode-extension-MS-python-vscode-pylance"
     "vscode-extension-ms-vsliveshare-vsliveshare"
     "google-chrome"
+    "slack"
   ];
 
   programs.direnv = {
