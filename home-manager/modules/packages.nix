@@ -31,6 +31,7 @@
     lollypop
     slack
     globalprotect-openconnect
+    parallel
   ];
 
   # permitted unfree packages

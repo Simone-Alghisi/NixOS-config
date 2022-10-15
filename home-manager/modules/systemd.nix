@@ -9,7 +9,7 @@
                     Description = "Run clean-screenshoots daily";
                 };
                 Timer = {
-                    OnCalendar = "*-*-* 9:30:00";
+                    OnCalendar = "daily";
                     Persistent = true;
                 };
                 Install = {
@@ -27,9 +27,6 @@
                     # systemd does not expand wildcards, while find can delete using -delete
                     # https://systemd-devel.freedesktop.narkive.com/f5bh2pDm/empty-a-directory-in-service-file-as-execstartpre
                     ExecStart = "${pkgs.findutils}/bin/find ${config.home.homeDirectory}/Pictures/Screenshots -mindepth 1 -delete";
-                };
-                Install = {
-                    WantedBy = [ "default.target" ];
                 };
             };
         };

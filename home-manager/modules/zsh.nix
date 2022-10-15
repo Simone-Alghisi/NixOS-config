@@ -33,7 +33,7 @@
       enable = true;
       # complete list at https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
       plugins = [
-        "git"
+        "gitfast"
         "python"
         "man"
         "fzf"
