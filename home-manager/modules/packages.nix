@@ -7,7 +7,7 @@
     wget
     unstable.tdesktop
     whatsapp-for-linux
-    firefox-esr-wayland
+    firefox-wayland
     thunderbird
     unstable.obsidian
     borgbackup
