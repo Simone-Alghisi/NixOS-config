@@ -4,34 +4,35 @@
   # List packages installed in your user profile. To search, run:
   # $ nix search wget
   home.packages = with pkgs; [
-    wget
-    unstable.tdesktop
-    whatsapp-for-linux
-    firefox-wayland
-    thunderbird
-    unstable.obsidian
     borgbackup
-    rclone
-    zoom-us
-    discord
-    home-manager
-    xdragon
-    libreoffice
-    ffmpeg
-    xournalpp
     btop
-    nodejs-16_x
-    google-chrome
+    discord
+    docker
     fd
-    tree
-    psmisc
+    ffmpeg
+    firefox-wayland
     gimp
-    shotcut
-    ncdu
-    lollypop
-    slack
     globalprotect-openconnect
+    google-chrome
+    home-manager
+    libreoffice
+    lollypop
+    ncdu
+    nodejs-16_x
     parallel
+    psmisc
+    rclone
+    shotcut
+    slack
+    thunderbird
+    tree
+    unstable.obsidian
+    unstable.tdesktop
+    wget
+    whatsapp-for-linux
+    xdragon
+    xournalpp
+    zoom-us
   ];
 
   # permitted unfree packages

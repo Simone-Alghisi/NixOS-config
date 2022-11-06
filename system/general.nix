@@ -28,9 +28,8 @@
     '';
    };
 
-  # Time for Windows-Nix dual boot.
+  # For dualboot set Windows on UTC
   time.timeZone = "Europe/Rome";
-  time.hardwareClockInLocalTime = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
