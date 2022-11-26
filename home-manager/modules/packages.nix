@@ -10,7 +10,7 @@
     docker
     fd
     ffmpeg
-    firefox-wayland
+    firefox
     gimp
     globalprotect-openconnect
     google-chrome
