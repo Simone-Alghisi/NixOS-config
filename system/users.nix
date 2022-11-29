@@ -7,7 +7,11 @@
     uid = 1000;
     home = "/home/alghisius";
     description = "Simone Alghisi";
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user and networkmanager.
+    extraGroups = [
+      "docker" # Enable docker
+      "networkmanager" # Enable networkmanager.
+      "wheel" # Enable sudo
+    ];
     shell = pkgs.zsh; # default shell only for this user.
   };
 }

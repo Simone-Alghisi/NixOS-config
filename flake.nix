@@ -12,20 +12,21 @@
       system = "x86_64-linux";
       specialArgs = attrs;
       modules = [
-        ./system/hardware-configuration.nix
-        nixos-hardware.nixosModules.dell-xps-13-9310
         ./system/boot.nix
-        ./system/general.nix
-        ./system/video-driver.nix
-        ./system/services.nix
-        ./system/network.nix
-        ./system/users.nix
-        ./system/gnome.nix
-        ./system/zsh.nix
-        ./system/packages.nix
-        ./system/X11.nix
         ./system/borgbackup.nix
         ./system/fonts.nix
+        ./system/general.nix
+        ./system/gnome.nix
+        ./system/hardware-configuration.nix
+        ./system/network.nix
+        ./system/packages.nix
+        ./system/services.nix
+        ./system/users.nix
+        ./system/video-driver.nix
+        ./system/virtualisation.nix
+        ./system/X11.nix
+        ./system/zsh.nix
+        nixos-hardware.nixosModules.dell-xps-13-9310
       ];
     };
   };

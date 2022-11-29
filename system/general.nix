@@ -16,7 +16,7 @@
       automatic = true;
       dates = "weekly";
       persistent = true;
-      options = "-d";
+      options = "--delete-older-than 14d";
     };
     package = pkgs.nixUnstable; # or versioned attributes like nix_2_4
     # enable flakes
