@@ -10,7 +10,7 @@
     docker
     fd
     ffmpeg
-    firefox
+    firefox-esr
     gimp
     globalprotect-openconnect
     google-chrome
@@ -22,8 +22,8 @@
     parallel
     psmisc
     rclone
-    shotcut
     slack
+    sshfs
     thunderbird
     tree
     unstable.obsidian

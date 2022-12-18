@@ -37,7 +37,5 @@ nnoremap <Esc> :noh<return><Esc>
 " Copy and Paste to wl-clipboard
 nnoremap <C-y> "+y
 vnoremap <C-y> "+y
-inoremap <C-y> "+y
 nnoremap <C-p> "+p
 vnoremap <C-p> "+p
-inoremap <C-p> "+p

@@ -16,6 +16,7 @@
       source ${config.home.homeDirectory}/.config/nvim/themes/theme.vim
       source ${config.home.homeDirectory}/.config/nvim/keys/which-key.vim
       source ${config.home.homeDirectory}/.config/nvim/keys/nerdcommenter.vim
+      source ${config.home.homeDirectory}/.config/nvim/plug-config/markdown-preview.vim
       source ${config.home.homeDirectory}/.config/nvim/keys/fugitive.vim
     '';
 
@@ -41,6 +42,7 @@
       # C and C++ syntax highlight
       vim-lsp-cxx-highlight
       # Markdown
+      markdown-preview-nvim
       vim-markdown-toc
     ];
 
