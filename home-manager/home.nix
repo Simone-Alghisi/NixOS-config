@@ -3,6 +3,7 @@
 {
 	imports = [
 		./modules/autostart.nix
+		./modules/binaries.nix
 		./modules/dconf.nix
 		./modules/git.nix
 		./modules/home.nix

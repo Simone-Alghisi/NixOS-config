@@ -29,6 +29,10 @@
 
     };
 
+    shellAliases = {
+      ovhai = "${pkgs.steam-run}/bin/steam-run ${config.home.homeDirectory}/.local/bin/ovhai/./ovhai";
+    };
+
     oh-my-zsh = {
       enable = true;
       # complete list at https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins

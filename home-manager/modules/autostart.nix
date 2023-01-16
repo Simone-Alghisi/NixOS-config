@@ -5,7 +5,7 @@
         source = config.lib.file.mkOutOfStoreSymlink "${pkgs.thunderbird}/share/applications/thunderbird.desktop";
     };
 
-    home.file.".config/autostart/telegramdesktop.desktop" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${pkgs.unstable.tdesktop}/share/applications/telegramdesktop.desktop";
+    home.file.".config/autostart/org.telegram.desktop.desktop" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${pkgs.unstable.tdesktop}/share/applications/org.telegram.desktop.desktop";
     };
 }

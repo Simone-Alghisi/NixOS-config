@@ -4,13 +4,15 @@
   # List packages installed in your user profile. To search, run:
   # $ nix search wget
   home.packages = with pkgs; [
+    authy
+    bitwarden
     borgbackup
     btop
     discord
     docker
     fd
     ffmpeg
-    firefox-esr
+    firefox#-esr
     gimp
     globalprotect-openconnect
     google-chrome
@@ -24,6 +26,7 @@
     rclone
     slack
     sshfs
+    steam-run
     thunderbird
     tree
     unstable.obsidian
@@ -37,13 +40,16 @@
 
   # permitted unfree packages
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "vscode"
-    "zoom"
+    "authy"
     "discord"
-    "vscode-extension-MS-python-vscode-pylance"
-    "vscode-extension-ms-vsliveshare-vsliveshare"
     "google-chrome"
     "slack"
+    "steam-original"
+    "steam-run"
+    "vscode"
+    "vscode-extension-MS-python-vscode-pylance"
+    "vscode-extension-ms-vsliveshare-vsliveshare"
+    "zoom"
   ];
 
   programs.direnv = {
