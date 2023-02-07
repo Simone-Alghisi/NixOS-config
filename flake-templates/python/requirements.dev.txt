@@ -1,2 +1,2 @@
-black<=22.5.*
+black==23.*
 pylint==2.*

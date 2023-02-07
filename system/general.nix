@@ -14,7 +14,7 @@
     # Automatic gc
     gc = {
       automatic = true;
-      dates = "weekly";
+      dates = "daily";
       persistent = true;
       options = "--delete-older-than 14d";
     };
@@ -29,7 +29,8 @@
    };
 
   # For dualboot set Windows on UTC
-  time.timeZone = "Europe/Rome";
+  #time.timeZone = "Europe/Rome";
+  time.timeZone = "America/Toronto";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
