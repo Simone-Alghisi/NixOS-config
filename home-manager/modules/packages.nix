@@ -12,7 +12,7 @@
     docker
     fd
     ffmpeg
-    firefox#-esr
+    firefox
     gimp
     globalprotect-openconnect
     google-chrome
