@@ -29,8 +29,7 @@
    };
 
   # For dualboot set Windows on UTC
-  #time.timeZone = "Europe/Rome";
-  time.timeZone = "America/Toronto";
+  time.timeZone = "Europe/Rome";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";

@@ -20,7 +20,7 @@
     libreoffice
     lollypop
     ncdu
-    nodejs-16_x
+    nodejs
     parallel
     psmisc
     rclone
@@ -30,7 +30,7 @@
     thunderbird
     tree
     unstable.obsidian
-    unstable.tdesktop
+    tdesktop
     wget
     whatsapp-for-linux
     xdragon

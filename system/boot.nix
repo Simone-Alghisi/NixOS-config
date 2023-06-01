@@ -7,7 +7,6 @@
   boot.loader.grub = {
     enable = true;
     devices = [ "nodev" ];
-    version = 2;
     efiSupport = true;
     configurationLimit = 5;
     enableCryptodisk = true;
