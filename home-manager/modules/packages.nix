@@ -27,6 +27,7 @@
     slack
     sshfs
     steam-run
+    spotify
     thunderbird
     tree
     unstable.obsidian
@@ -44,12 +45,15 @@
     "discord"
     "google-chrome"
     "slack"
+    "spotify"
     "steam-original"
     "steam-run"
     "vscode"
     "vscode-extension-MS-python-vscode-pylance"
+    "vscode-extension-ms-vscode-remote-remote-ssh"
     "vscode-extension-ms-vsliveshare-vsliveshare"
     "zoom"
+    "zotero"
   ];
 
   programs.direnv = {

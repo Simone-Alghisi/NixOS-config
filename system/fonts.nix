@@ -1,7 +1,7 @@
 { config, pkgs, ...}:
 
 {
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     powerline-fonts
   ];
 }

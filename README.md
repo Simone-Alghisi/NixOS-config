@@ -58,7 +58,7 @@ In most cases, dualboot is quite easy given that it is possible to use OSProber 
 
 ## Upgrading
 Upgrading NixOS is fairly simple, you can read the [corresponding section](https://nixos.org/manual/nixos/stable/index.html#sec-upgrading) for other informations, or do the following:
-1. switch to the right channel through `sudo nix-channel --add https://nixos.org/channels/channel-name nixos`. Of course, change `channel-name` to the right channel (e.g. `nixos-22.05`);
+1. switch to the right channel through `sudo nix-channel --add https://channels.nixos.org/channel-name nixos`. Of course, change `channel-name` to the right channel (e.g. `nixos-22.05`);
     > Be sure to include `nixos` parameter at the end.
 2. run `sudo nixos-rebuild switch --upgrade`;
 

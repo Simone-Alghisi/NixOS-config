@@ -6,6 +6,6 @@
     };
 
     home.file.".config/autostart/org.telegram.desktop.desktop" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${pkgs.unstable.tdesktop}/share/applications/org.telegram.desktop.desktop";
+        source = config.lib.file.mkOutOfStoreSymlink "${pkgs.tdesktop}/share/applications/org.telegram.desktop.desktop";
     };
 }

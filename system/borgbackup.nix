@@ -57,7 +57,12 @@
 						"${home}/Music"
 						"${home}/NixOS-config"
 						"${home}/Pictures"
-						"${home}/shared"
+						"${home}/shared/Magistrale"
+						"${home}/shared/obsidian"
+						"${home}/shared/personal_documents"
+						"${home}/shared/personal_page"
+						"${home}/shared/PhD"
+						"${home}/shared/Università"
 					];
 					exclude = builtins.concatLists (
 						map (x:

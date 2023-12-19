@@ -3,11 +3,11 @@
 
   inputs = {
     # Specify the source of Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Specify the source of Home Manager
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
+      url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -16,11 +16,23 @@
     let
       system = "x86_64-linux";
       username = "alghisius";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        system = system;
+        config = {
+          permittedInsecurePackages = [
+            "zotero-6.0.26"
+          ];
+        };
+      };
       unstable-overlay = final: prev: {
         unstable = import nixpkgs-unstable {
           system = system;
           config.allowUnfree = true;
+          config = {
+            permittedInsecurePackages = [
+              "electron-25.9.0"
+            ];
+          };
         };
       };
     in {

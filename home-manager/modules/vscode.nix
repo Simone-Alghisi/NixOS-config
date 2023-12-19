@@ -16,6 +16,7 @@
 			vscodevim.vim
 			streetsidesoftware.code-spell-checker
 			yzhang.markdown-all-in-one
+			ms-vscode-remote.remote-ssh
 		];
 
 		keybindings = [
